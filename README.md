@@ -28,7 +28,7 @@ Whether it’s **"I love you ❤️" spiral vibes** or **mass text multipliers**
 ---
 
 ## 🌐 Try it now  
-**Live site:** [https://seigh-sword.github.io/pattern-maker/](https://seigh-sword.github.io/pattern-maker/)
+**Live site:** [Cool pattern maker](https://seigh-sword.github.io/pattern-maker/)
 
 ---
 
