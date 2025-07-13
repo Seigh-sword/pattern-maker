@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pattern generator</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    textarea, input {
+      width: 80%;
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .output {
+      white-space: pre-wrap;
+      font-family: monospace;
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1> Text Pattern Generator </h1>
+
+  <div id="modeSwitcher">
+    <button onclick="switchMode('pattern')">❤️ Pattern Mode</button>
+    <button onclick="switchMode('multiplier')">🔁 Text Multiplier</button>
+  </div>
+
+  <!-- PATTERN MODE -->
+  <div id="patternMode">
+    <textarea id="patternText" rows="2">I love you</textarea><br>
+    <input type="number" id="patternCount" value="30" min="1" max="100">
+    <label>Pattern Length</label><br>
+    <button onclick="generatePattern()">Generate Pattern</button>
+  </div>
+
+  <!-- MULTIPLIER MODE -->
+  <div id="multiplierMode" class="hidden">
+    <input id="multiText" placeholder="Text to repeat (e.g. Sorry babe)">
+    <input type="number" id="multiCount" value="10" min="1" placeholder="Repeat Count">
+    <label>
+      <input type="checkbox" id="enableNumbering"> Numbered List
+    </label><br>
+    <button onclick="generateMultiplier()">Multiply It!</button>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="output" id="outputBox"></div>
+  <button onclick="copyOutput()">Copy to Clipboard</button>
+
+  <script>
+    function switchMode(mode) {
+      document.getElementById('patternMode').classList.toggle('hidden', mode !== 'pattern');
+      document.getElementById('multiplierMode').classList.toggle('hidden', mode !== 'multiplier');
+      document.getElementById('outputBox').innerText = '';
+    }
+
+    function generatePattern() {
+      const text = document.getElementById("patternText").value;
+      const max = parseInt(document.getElementById("patternCount").value);
+      const emojis = ["💛", "💚", "💙", "💜", "💙", "💚", "💛", "❤️"];
+      let output = "";
+
+      const waveDepth = 7; // how many spaces max
+      let wave = 0;
+      let direction = 1; // 1 = going down, -1 = up
+
+      for (let i = 1; i <= max; i++) {
+        let spaces = " ".repeat(waveDepth - wave);
+        let emoji = emojis[i % emojis.length];
+        output += `${spaces}${text} ${i}%${emoji}\n`;
+
+        wave += direction;
+        if (wave === waveDepth || wave === 0) direction *= -1; // flip direction
+      }
+
+      document.getElementById("outputBox").innerText = output;
+    }
+
+    function generateMultiplier() {
+      const text = document.getElementById("multiText").value;
+      const count = parseInt(document.getElementById("multiCount").value);
+      const numbered = document.getElementById("enableNumbering").checked;
+      let output = "";
+
+      for (let i = 1; i <= count; i++) {
+        output += numbered ? `${i}) ${text}\n` : `${text}\n`;
+      }
+
+      document.getElementById("outputBox").innerText = output;
+    }
+
+    function copyOutput() {
+      const output = document.getElementById("outputBox").innerText;
+      navigator.clipboard.writeText(output).then(() => {
+        alert("✨Copied to clipboard!✨");
+      });
+    }
+  </script>
+
+</body>
+</html>
