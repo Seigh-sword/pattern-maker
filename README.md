@@ -30,7 +30,4 @@ If you enjoy this project and want to support me, **subscribe to my YouTube chan
 
 ---
 
-## 📜 License
-MIT License — free to use and modify.  
-
-> Made with ❤️, 🍭, and ☕ by **Seigh_sword**
+## Made with ❤️ by **Seigh_sword**
