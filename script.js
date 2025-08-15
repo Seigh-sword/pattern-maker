@@ -5,10 +5,11 @@ function switchMode(mode) {
   document.getElementById('outputBox').innerText = '';
 }
 
-// Pattern Generator (no emojis)
+// Pattern Generator (supports hearts mode)
 function generatePattern() {
   const text = document.getElementById("patternText").value;
   const max = parseInt(document.getElementById("patternCount").value);
+  const heartMode = document.getElementById("heartMode")?.checked; // new checkbox for hearts
   let output = "";
 
   const waveDepth = 7;
@@ -17,7 +18,16 @@ function generatePattern() {
 
   for (let i = 1; i <= max; i++) {
     let spaces = " ".repeat(waveDepth - wave);
-    output += `${spaces}${text} ${i}%\n`;
+
+    if (heartMode) {
+      // Heart wave pattern ❤️💛💚💙💜
+      const hearts = ["❤️", "💛", "💚", "💙", "💜"];
+      const heart = hearts[i % hearts.length];
+      output += `${spaces}${heart} ${text} ${heart}\n`;
+    } else {
+      // Plain wave pattern
+      output += `${spaces}${text} ${i}%\n`;
+    }
 
     wave += direction;
     if (wave === waveDepth || wave === 0) direction *= -1;
@@ -77,6 +87,9 @@ function addEmojis() {
   document.getElementById('generateMultiplierBtn').innerText = "🔥 Multiply It!";
   document.getElementById('copyBtn').innerText = "📋 Copy to Clipboard";
   document.getElementById('numberedLabel').innerHTML = `<input type="checkbox" id="enableNumbering"> 🧾 Numbered List`;
+  if (document.getElementById('heartLabel')) {
+    document.getElementById('heartLabel').innerHTML = `<input type="checkbox" id="heartMode"> 💖 Heart Pattern`;
+  }
 }
 
 function removeEmojis() {
@@ -88,4 +101,7 @@ function removeEmojis() {
   document.getElementById('generateMultiplierBtn').innerText = "Multiply It!";
   document.getElementById('copyBtn').innerText = "Copy to Clipboard";
   document.getElementById('numberedLabel').innerHTML = `<input type="checkbox" id="enableNumbering"> Numbered List`;
+  if (document.getElementById('heartLabel')) {
+    document.getElementById('heartLabel').innerHTML = `<input type="checkbox" id="heartMode"> Heart Pattern`;
+  }
 }
