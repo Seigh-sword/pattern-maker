@@ -1,0 +1,63 @@
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  text-align: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+textarea, input {
+  width: 80%;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button, select {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover, select:hover {
+  transform: scale(1.05);
+}
+
+.output {
+  white-space: pre-wrap;
+  font-family: monospace;
+  background: rgba(0,0,0,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  min-height: 100px;
+}
+
+.hidden { display: none; }
+
+/* Themes */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.candy-mode {
+  background: linear-gradient(135deg, pink, lightyellow, lightblue);
+  color: #5a005a;
+}
+
+.emoji-mode {
+  background-color: #ffe9a8;
+  color: #222;
+}
