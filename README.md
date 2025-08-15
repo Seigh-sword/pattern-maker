@@ -7,7 +7,6 @@ A fun, lightweight, and customizable **pattern & text multiplier** tool built wi
 ## Features
 - **Pattern Mode** → Create wave-style repeating patterns of your text  
 - **Multiplier Mode** → Repeat text N times, with optional numbering
-- **Heart Wave Mode** – Generate flowing emoji heart waves 
 - **4 Themes**:
   - Dark Mode
   - Light Mode
