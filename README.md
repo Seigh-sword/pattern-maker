@@ -1,10 +1,10 @@
-# 🎨 Text Pattern Generator
+# Text Pattern Generator
 
 A fun, lightweight, and customizable **pattern & text multiplier** tool built with pure HTML, CSS, and JavaScript — now featuring **Dark**, **Light**, **Candy**, and **Emoji** themes.  
 
 ---
 
-## 🚀 Features
+## Features
 - **Pattern Mode** → Create wave-style repeating patterns of your text  
 - **Multiplier Mode** → Repeat text N times, with optional numbering  
 - **4 Themes**:
@@ -18,16 +18,19 @@ A fun, lightweight, and customizable **pattern & text multiplier** tool built wi
 
 ---
 
-## 🎮 Play Now
+## Play Now
 You can play it instantly here:  
 🔗 **[Open the Game](https://seigh-sword.github.io/pattern-maker/)**
 
 ---
 
-## 📺 Subscribe!
+## Subscribe!
 If you enjoy this project and want to support me, **subscribe to my YouTube channel** for more projects, coding fun, and chaos:  
 👉 [Sieghsword on YouTube](https://www.youtube.com/@Sieghsword)  
 
 ---
 
-## Made with ❤️ by **Seigh_sword**
+---
+
+<p align="center">Made with &#x1F496; by <b>Seigh_sword</b></p>
+
